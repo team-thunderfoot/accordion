@@ -1,20 +1,19 @@
 # Accordion
 
-The `tabs` package provides a tabbed interface functionality that allows for easy navigation between different content sections. It enables customization of the active tab class and the tab body class, providing a seamless user experience.
+<!-- The `tabs` package provides a tabbed interface functionality that allows for easy navigation between different content sections. It enables customization of the active tab class and the tab body class, providing a seamless user experience. -->
 
 [Here's an example](https://team-thunderfoot.github.io/accordion/dist/index.html)
 
 ## Installation
 
 ```sh
-npm install @teamthunderfoot/tabs
+npm install @teamthunderfoot/accordion
 ```
 
 ## Usage
 
 ```sh
-import Tabs from "@teamthunderfoot/tabs";
-import { breakpoints } from "@teamthunderfoot/breakpoints";
+import Tabs from "@teamthunderfoot/accordion";
 
 class Page {
   constructor() {
@@ -23,26 +22,19 @@ class Page {
   }
 
   init() {
-    const bk = breakpoints.reduce(
-      (target, inner) => Object.assign(target, inner),
-      {}
-    );
 
-    this.tabsA = new Tabs({
-      tabContainer: "tf-ds-container",
-      tabActive: "tf-ds-tab-a-active",
-      tabActiveClass: "c--tabs-a__bd__item--is-active",
-      tabBodyActiveClass: "c--tabs-a__hd__list-item__link--is-active",
-      tabTrigger: "tf-ds-tab-to-open-a",
-      tabParent: "tf-ds-tab-parent",
-      tabBody: "tf-ds-tab-body-a",
-      externalTrigger: "tf-ds-tab-external-open-a",
-      selectClass: "js--select-item-a",
-      mediaQuerySelect: bk.tablets, // 810
-      onChange: () => {
-        // do something
-      },
-    });
+    this.accordionA = new Accordion({
+        accActive: "accordion-1",
+        accActiveClass: "c--accordion-a--is-active",
+        accBodyClass: "c--accordion-a__bd",
+        accClose: true,
+        accAllOpen: false,
+        accTrigger: "tf-ds-acc-target",
+        accBody: "tf-ds-acc-body",
+        onChange: () => {
+            //do something
+        },
+    })
   }
 
   events() {
@@ -55,6 +47,7 @@ new Page();
 
 ```
 
+<!--
 In your HTML file, add the necessary elements for the tabs. Each tab group should have a unique identifier (e.g., `tab-a-1` or `tab-a-2`). Use the provided CSS classes and data attributes to specify the tab triggers, tab bodies, and select elements.
 
 -   **Container:** The tab container element should have an ID attribute. Example: `id="tab-a-1"`.
@@ -80,166 +73,85 @@ In your HTML file, add the necessary elements for the tabs. Each tab group shoul
     -   An ID attribute. Example: `id="select-01"`.
     -   A class to identify it. Example: `class="js--select-item-a"`.
     -   An attribute with a value equal to the ID of the container it belongs to. Example: `tf-ds-container="tab-a-1"`.
-    -   The value of the options should be the ID of the body it should open. Example: `<option value="tab-a-1-1">...</option>`.
+    -   The value of the options should be the ID of the body it should open. Example: `<option value="tab-a-1-1">...</option>`. -->
 
 #### HTML
 
 ```sh
-<div class="c--tabs-a js--tabs-a" id="tab-a-1">
-
-    <div class="c--form-group-a">
-        <div class="c--form-select-a">
-            <select id="select-01" class="c--form-select-a__item js--select-item-a" tf-ds-container="tab-a-1">
-                <option value="tab-a-1-1">Item1</option>
-                <option value="tab-a-1-2">Item2</option>
-            </select>
-        </div>
-    </div>
-
-    <ul class="c--tabs-a__hd">
-        <li class="c--tabs-a__hd__list-item">
-            <button class="c--tabs-a__hd__list-item__link" tf-ds-tab-to-open-a="tab-a-1-1" tf-ds-tab-parent="tab-a-1-1" tf-ds-container="tab-a-1">Item1</button>
-        </li>
-        <li class="c--tabs-a__hd__list-item">
-            <button class="c--tabs-a__hd__list-item__link" tf-ds-tab-to-open-a="tab-a-1-2"  tf-ds-tab-parent="tab-a-1-2" tf-ds-container="tab-a-1">Item2</button>
-        </li>
-    </ul>
-
-    <div class="c--tabs-a__bd">
-        <div class="c--tabs-a__bd__item" id="tab-a-1-1" tf-ds-tab-body-a="tab-a-1-1" tf-ds-tab-a-active="true">
-            <p>Content item 1 item 1 item 1 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, commodi
-            illum nihil maxime quaerat eos sequi error natus neque, debitis ducimus veniam minus animi iure
-            suscipit at acc <a href='#' tf-ds-tab-to-open-a="tab-a-1-2" tf-ds-container="tab-a-1">TAB 2</a> usamus, laborum fuga! Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Debitis blanditiis, eveniet consequatur omnis voluptatum,
-            possimus qui itaque doloremque laudantium, veniam error ab perspiciatis tempora labore aperiam ratione
-            eum non ipsum.</p>
-        </div>
-        <div class="c--tabs-a__bd__item" id="tab-a-1-2" tf-ds-tab-body-a="tab-a-1-2">
-            <p>Content item 2 item 2 item 2 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum, commodi
-            illum nihil maxime quaerat eos sequi error natus neque, debitis ducimus veniam minus animi iure
-            suscipit at accusamus, laborum fuga! Lorem ipsum dolor
-            sit amet consectetur adipisicing elit. Debitis blanditiis, eveniet consequatur omnis voluptatum,
-            possimus qui itaque doloremque laudantium, veniam error ab perspiciatis tempora labore aperiam ratione
-            eum non ipsum.</p>
-        </div>
-    </div>
+<div class="c--accordion-a js--accordion-a" id="accordion-3" tf-ds-acc-body="accordion-3">
+  <div class="c--accordion-a__hd" tf-ds-acc-target="accordion-3">
+      <p class="c--accordion-a__hd__title">Accordion 3</p>
+  </div>
+  <div class="c--accordion-a__bd">
+      <div class="c--accordion-a__bd__content b--content-a">
+          <p>Accordion content 3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, corrupti! Beatae ratione quas ab, tenetur id ut, debitis error repudiandae sint minima voluptatibus, dolorem expedita molestias. Quam assumenda odit sequi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptatum, commodi, quisquam cum perspiciatis similique facilis blanditiis debitis dicta ullam, temporibus a nulla laboriosam dignissimos veniam sequi molestiae voluptates veritatis.</p>
+      </div>
+  </div>
 </div>
-
-<p>Open Item 2 on tab 1 by clicking <a href="#" tf-ds-tab-external-open-b="tab-a-1-2" tf-ds-container="tab-a-1">here</a></p>
 ```
 
 #### CSS Styles
 
 ```sh
-TABS
-
-
-/* Start Header Style */
-.c--tabs-a__hd {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+.c--accordion-a {
+    border: 1px solid #3ca8b0;
 }
 
-@media all and (max-width: 810px) {
-    .c--tabs-a__hd {
-        display: none;
-    }
+.c--accordion-a__hd {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    background-color: rgba(120, 242, 197, 0.4);
+    cursor: pointer;
 }
 
-.c--tabs-a__hd__list-item {
-    display: inline-block;
-}
-
-.c--tabs-a__hd__list-item__link {
-    font-family: Arial, sans-serif;
+.c--accordion-a__hd__title {
+    font-family: Jost, sans-serif;
     font-weight: 300;
     line-height: 1.35;
     letter-spacing: 0.26px;
     font-size: 1rem;
+    color: #3ca8b0;
     text-decoration: none !important;
-    text-underline-position: auto;
-    display: inline-block;
-    background: #a6a6a6;
-    color: #ffffff;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    position: relative;
-    padding: 0.45455rem 0.5rem;
-    appearance: none;
+    margin-bottom: 0px;
 }
 
-/* hover foucs and active state */
-.c--tabs-a__hd__list-item__link:hover,
-.c--tabs-a__hd__list-item__link:focus,
-.c--tabs-a__hd__list-item__link--is-active {
-    background: #3ca8b0;
-    color: #ffffff;
-}
-
-/* End Header Style */
-
-/* Start Body Style*/
-.c--tabs-a__bd {
-    padding-top: 16px;
-}
-
-.c--tabs-a__bd__item {
-    /* this should not be changed if possible*/
-    overflow: hidden;
+.c--accordion-a__bd {
     max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.6s cubic-bezier(0, 1, 0, 1);
+    transition: max-height 0.6s cubic-bezier(0, 1, 0, 1);
 }
 
-.c--tabs-a__bd__item--is-active {
-    max-height: 99rem;
-    opacity: 1;
+.c--accordion-a__bd__content {
+    padding: 0.5rem;
 }
 
-
-SELECTOR
-
-
-.c--form-group-a {
-    position: relative;
-    margin-bottom: 24px;
+.c--accordion-a--is-active .c--accordion-a__hd {
+    border-bottom: 1px solid #3ca8b0;
 }
 
-.c--form-select-a {
-    position: relative;
-    width: 100%;
+.c--accordion-a--is-active .c--accordion-a__hd__artwork--first {
     display: none;
 }
 
-.c--form-select-a__item {
-    font-size: 16px;
-    color: rgba(#4d49f3, 0.5);
+.c--accordion-a--is-active .c--accordion-a__hd__artwork--second {
     display: block;
-    padding: 8px 24px;
-    border: 1px solid #4d49f3;
-    border-radius: 90px;
-    background: #fff;
-    width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
-.c--form-select-a__item:valid {
-    color: #4d49f3;
-}
-
-@media all and (max-width: 810px) {
-    .c--form-select-a {
-        display: block;
-    }
+.c--accordion-a--is-active .c--accordion-a__bd {
+    max-height: 99em;
+    -webkit-transition: max-height 0.9s ease-in-out;
+    transition: max-height 0.9s ease-in-out;
 }
 ```
 
-## Customization
+<!-- ## Customization
 
-You can customize the CSS classes and data attributes used by the tabs package to match your project's styles and structure. Modify the class names and data attributes in both the JavaScript and HTML sections accordingly.
+You can customize the CSS classes and data attributes used by the tabs package to match your project's styles and structure. Modify the class names and data attributes in both the JavaScript and HTML sections accordingly. -->
 
-## Options
+<!-- ## Options
 
 • `tabContainer:` Specifies the ID selector for the main container of the tabs.
 
@@ -261,18 +173,18 @@ You can customize the CSS classes and data attributes used by the tabs package t
 
 • `onChange():` Specifies a callback function to be executed when the tab changes.
 
-• `mediaQuerySelect:` Specifies the breakpoint at which to activate mobile selection behavior. When the window width is less than the specified value, the tabs are replaced with a select element for better mobile user experience
+• `mediaQuerySelect:` Specifies the breakpoint at which to activate mobile selection behavior. When the window width is less than the specified value, the tabs are replaced with a select element for better mobile user experience -->
 
 ## Destroy
 
-Destroys the `Tabs` instance by removing event listeners and resetting the state. This method should be called when you want to completely remove the tab functionality from the page.
+Destroys the `Accordion` instance by removing event listeners and resetting the state. This method should be called when you want to completely remove the accordion functionality from the page.
 
 ```sh
-const tabs = new Tabs(options);
-tabs.destroy();
+const accordion = new Accordion(options);
+accordion.destroy();
 ```
 
-## More than one group of tabs
+<!-- ## More than one group of tabs
 
 If you have two or more groups of tabs, you can instantiate the JS class in the following way:
 
@@ -341,4 +253,4 @@ export default Page;
 
 new Page();
 
-```
+``` -->
