@@ -1,0 +1,106 @@
+.c--accordion-a {
+    border: 1px solid #3ca8b0;
+}
+
+.c--accordion-a__hd {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    background-color: rgba(120, 242, 197, 0.4);
+    cursor: pointer;
+}
+
+.c--accordion-a__hd__title {
+    font-family: Jost, sans-serif;
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: 0.26px;
+    font-size: 1rem;
+    color: #3ca8b0;
+    text-decoration: none !important;
+    margin-bottom: 0px;
+}
+
+.c--accordion-a__bd {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.6s cubic-bezier(0, 1, 0, 1);
+    transition: max-height 0.6s cubic-bezier(0, 1, 0, 1);
+}
+
+.c--accordion-a__bd__content {
+    padding: 0.5rem;
+}
+
+.c--accordion-a--is-active .c--accordion-a__hd {
+    border-bottom: 1px solid #3ca8b0;
+}
+
+.c--accordion-a--is-active .c--accordion-a__hd__artwork--first {
+    display: none;
+}
+
+.c--accordion-a--is-active .c--accordion-a__hd__artwork--second {
+    display: block;
+}
+
+.c--accordion-a--is-active .c--accordion-a__bd {
+    max-height: 99em;
+    -webkit-transition: max-height 0.9s ease-in-out;
+    transition: max-height 0.9s ease-in-out;
+}
+
+// Accordion B
+.c--accordion-b {
+    border: 1px solid #f36d25;
+}
+
+.c--accordion-b__hd {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+    background-color: rgba(#f36d25, 0.4);
+    cursor: pointer;
+}
+
+.c--accordion-b__hd__title {
+    font-family: Jost, sans-serif;
+    font-weight: 300;
+    line-height: 1.35;
+    letter-spacing: 0.26px;
+    font-size: 1rem;
+    color: #f36d25;
+    text-decoration: none !important;
+    margin-bottom: 0px;
+}
+
+.c--accordion-b__bd {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.6s cubic-bezier(0, 1, 0, 1);
+    transition: max-height 0.6s cubic-bezier(0, 1, 0, 1);
+}
+
+.c--accordion-b__bd__content {
+    padding: 0.5rem;
+}
+
+.c--accordion-b--is-active .c--accordion-b__hd {
+    border-bottom: 1px solid #f36d25;
+}
+
+.c--accordion-b--is-active .c--accordion-b__hd__artwork--first {
+    display: none;
+}
+
+.c--accordion-b--is-active .c--accordion-b__hd__artwork--second {
+    display: block;
+}
+
+.c--accordion-b--is-active .c--accordion-b__bd {
+    max-height: 99em;
+    -webkit-transition: max-height 0.9s ease-in-out;
+    transition: max-height 0.9s ease-in-out;
+}

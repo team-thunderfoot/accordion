@@ -1,0 +1,32 @@
+{
+  "name": "@teamthunderfoot/accordion",
+  "version": "0.0.5",
+  "description": "Accordion package",
+  "main": "",
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-thunderfoot/accordion.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/team-thunderfoot/accordion/issues"
+  },
+  "homepage": "https://github.com/team-thunderfoot/accordion#readme",
+  "devDependencies": {
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "@andresclua/debounce-throttle": "^0.0.82",
+    "@babel/core": "^7.14.3"
+  },
+  "keywords": [
+    "accordion"
+  ]
+}
