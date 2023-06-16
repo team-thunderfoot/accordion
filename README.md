@@ -1,8 +1,8 @@
-# Tabs
+# Accordion
 
 The `tabs` package provides a tabbed interface functionality that allows for easy navigation between different content sections. It enables customization of the active tab class and the tab body class, providing a seamless user experience.
 
-[Here's an example](https://team-thunderfoot.github.io/tabs/dist/index.html)
+[Here's an example](https://team-thunderfoot.github.io/accordion/dist/index.html)
 
 ## Installation
 
