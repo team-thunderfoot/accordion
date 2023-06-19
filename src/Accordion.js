@@ -21,6 +21,7 @@ class Accordion {
     }
 
     events() {
+        // Assign events to accordion trigger elements
         const triggers = document.querySelectorAll(`[${this.accTrigger}]`)
         triggers.forEach((trigger) => {
             trigger.addEventListener("click", (e) => {
@@ -30,6 +31,7 @@ class Accordion {
         })
     }
 
+    // Set the default active accordion
     setDefaultActiveAcc() {
         const accordions = document.querySelectorAll(`[${this.accActive}]`)
         accordions.forEach((accordion) => {
@@ -38,9 +40,11 @@ class Accordion {
     }
 
     toggleAcc(trigger) {
+        // Get the accordion ID from the trigger element
         let accordionID = trigger.getAttribute(this.accTrigger)
         let accBody = document.getElementById(accordionID)
 
+        // Check if the accordion exists and make changes to its state
         if (accBody) {
             const isActive = accBody.classList.contains(this.accActiveClass)
 
@@ -66,6 +70,7 @@ class Accordion {
         if (this.onChange) this.onChange()
     }
 
+    // Hides all active clases
     hideAccordion() {
         const accBodies = document.querySelectorAll(`[${this.accBody}]`)
         accBodies.forEach((accBody) => {
@@ -82,6 +87,7 @@ class Accordion {
         })
     }
 
+    // Clears the click event and removes all added classes
     destroy() {
         const triggers = document.querySelectorAll(`[${this.accTrigger}]`)
         triggers.forEach((trigger) => {
