@@ -4,46 +4,51 @@ class Page {
         this.accordionA = null
         this.accordionB = null
         this.init()
+        this.events()
     }
     init() {
         document.querySelectorAll(".js--accordion-a").forEach((el) => {
             this.accordionA = new Accordion({
-                accActive: "accordion-1",
+                accActive: "",
                 accActiveClass: "c--accordion-a--is-active",
                 accBodyClass: "c--accordion-a__bd",
-                accClose: true,
+                accClose: false,
                 accAllOpen: false,
-                accTrigger: "tf-ds-acc-target", // tiene el id del accordion que tiene que abrir
-                accBody: "tf-ds-acc-body", // tiene el id del accordion que tiene que abrir
+                accTrigger: "tf-ds-acc-target",
+                accBody: "tf-ds-acc-body",
                 onChange: () => {
                     //do something
                 },
             })
         })
 
-        // document.querySelectorAll(".js--accordion-b").forEach((el) => {
-        //     this.accordionB = new Accordion({
-        //         accActive: "",
-        //         accActiveClass: "c--accordion-b--is-active",
-        //         accBodyClass: "c--accordion-b__bd",
-        //         accClose: true,
-        //         accAllOpen: false,
-        //         accTrigger: "tf-ds-acc-b-target", // tiene el id del accordion que tiene que abrir
-        //         accBody: "tf-ds-acc-b-body", // tiene el id del accordion que tiene que abrir
-        //         onChange: () => {
-        //             //do something
-        //         },
-        //     })
-        // })
+        document.querySelectorAll(".js--accordion-b").forEach((el) => {
+            this.accordionB = new Accordion({
+                accActive: "accordion-5",
+                accActiveClass: "c--accordion-b--is-active",
+                accBodyClass: "c--accordion-b__bd",
+                accClose: true,
+                accAllOpen: true,
+                accTrigger: "tf-ds-acc-target",
+                accBody: "tf-ds-acc-body",
+                onChange: () => {
+                    //do something
+                },
+            })
+        })
 
-        setTimeout(() => {
-            this.accordionA.openAccordion("accordion-2")
-        }, 1500)
+        // setTimeout(() => {
+        //     this.accordionA.openAccordion("accordion-2")
+        // }, 1500)
 
         document.querySelector(".js--accordion-destroy").addEventListener("click", (e) => {
             e.preventDefault()
             this.destroyAccordion()
         })
+    }
+
+    events() {
+        // Otros eventos de la página...
     }
 
     destroyAccordion() {

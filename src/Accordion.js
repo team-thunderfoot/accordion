@@ -1,4 +1,5 @@
 import JSUTIL from "@andresclua/jsutil"
+
 class Accordion {
     constructor(payload) {
         this.accActive = payload.accActive
@@ -24,37 +25,37 @@ class Accordion {
         triggers.forEach((trigger) => {
             trigger.addEventListener("click", (e) => {
                 e.preventDefault()
-
-                // Hides all active classes
                 this.toggleAcc(trigger)
             })
         })
     }
 
+    // Sets the default active accordion
     setDefaultActiveAcc() {
         const acc = document.getElementById(this.accActive)
-        this.JSUTIL.addClass(acc, this.accActiveClass)
+        if (acc) {
+            this.JSUTIL.addClass(acc, this.accActiveClass)
+        }
     }
 
     toggleAcc(trigger) {
-        // Hides all active classes
-        // apply class to trigger
-        var accordionID = trigger.getAttribute(`${this.accTrigger}`)
-        var accBody = document.getElementById(accordionID)
+        let accordionID = trigger.getAttribute(this.accTrigger)
+        let accBody = document.getElementById(accordionID)
 
-        if (this.accClose === true) {
-            if (accBody.classList.contains(this.accActiveClass)) {
-                this.JSUTIL.toggleClass(accBody, this.accActiveClass)
-                if (!this.accAllOpen) this.hideAllAccsExceptActual(accordionID)
-            } else if (!this.accAllOpen) {
-                this.hideAccordion()
-                this.JSUTIL.toggleClass(accBody, this.accActiveClass)
+        if (accBody) {
+            const isActive = accBody.classList.contains(this.accActiveClass)
+
+            if (this.accClose) {
+                isActive ? this.JSUTIL.removeClass(accBody, this.accActiveClass) : this.JSUTIL.addClass(accBody, this.accActiveClass)
+            } else if (!isActive) {
+                this.JSUTIL.addClass(accBody, this.accActiveClass)
             }
-        } else {
-            this.hideAccordion()
-            //apply class to element
-            this.JSUTIL.toggleClass(accBody, this.accActiveClass)
+
+            if (!this.accAllOpen) {
+                this.hideAllAccsExceptActual(accordionID)
+            }
         }
+
         if (this.onChange) this.onChange()
     }
 
@@ -67,7 +68,6 @@ class Accordion {
     }
 
     hideAccordion() {
-        //removes class element
         const accBodies = document.querySelectorAll(`[${this.accBody}]`)
         accBodies.forEach((accBody) => {
             this.JSUTIL.removeClass(accBody, this.accActiveClass)
@@ -75,10 +75,9 @@ class Accordion {
     }
 
     hideAllAccsExceptActual(targetID) {
-        //removes class element except actual
         const accBodies = document.querySelectorAll(`[${this.accBody}]`)
         accBodies.forEach((accBody) => {
-            if (accBody.getAttribute(`${this.accBody}`) != targetID) {
+            if (accBody.getAttribute(`${this.accBody}`) !== targetID) {
                 this.JSUTIL.removeClass(accBody, this.accActiveClass)
             }
         })
