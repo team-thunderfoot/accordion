@@ -30,12 +30,11 @@ class Accordion {
         })
     }
 
-    // Sets the default active accordion
     setDefaultActiveAcc() {
-        const acc = document.getElementById(this.accActive)
-        if (acc) {
-            this.JSUTIL.addClass(acc, this.accActiveClass)
-        }
+        const accordions = document.querySelectorAll(`[${this.accActive}]`)
+        accordions.forEach((accordion) => {
+            this.JSUTIL.addClass(accordion, this.accActiveClass)
+        })
     }
 
     toggleAcc(trigger) {
