@@ -1,6 +1,6 @@
 # Accordion
 
-<!-- The `tabs` package provides a tabbed interface functionality that allows for easy navigation between different content sections. It enables customization of the active tab class and the tab body class, providing a seamless user experience. -->
+The accordion package provides accordion interface functionality that allows you to interactively show and hide content sections. It makes it easy to create custom accordion elements and offers a seamless user experience.
 
 [Here's an example](https://team-thunderfoot.github.io/accordion/dist/index.html)
 
@@ -13,7 +13,7 @@ npm install @teamthunderfoot/accordion
 ## Usage
 
 ```sh
-import Tabs from "@teamthunderfoot/accordion";
+import Accordion from "@teamthunderfoot/accordion";
 
 class Page {
   constructor() {
@@ -23,7 +23,7 @@ class Page {
 
   init() {
 
-    this.accordionA = new Accordion({
+    const accordion = new Accordion({
         accActive: "accordion-1",
         accActiveClass: "c--accordion-a--is-active",
         accBodyClass: "c--accordion-a__bd",
@@ -47,44 +47,36 @@ new Page();
 
 ```
 
-<!--
-In your HTML file, add the necessary elements for the tabs. Each tab group should have a unique identifier (e.g., `tab-a-1` or `tab-a-2`). Use the provided CSS classes and data attributes to specify the tab triggers, tab bodies, and select elements.
+In your HTML file, add the necessary elements for the accordion. Each accordion item should have a specific structure that includes a header and hidden content.
 
--   **Container:** The tab container element should have an ID attribute. Example: `id="tab-a-1"`.
+-   **Accordion container:** The accordion container element should have a class. Example: `class="js--accordion-a"`.
 
--   **Triggers:** The tab triggers should have the following attributes:
+-   **Accordion item:** The accordion item should have:
 
-    -   An attribute with a value equal to the ID of the tab body it should open. Example: `tf-ds-tab-to-open-a="tab-a-1-1"`.
-    -   An attribute that specifies which container it belongs to. Example: `tf-ds-container="tab-a-1"`.
-    -   If it's a tab and not a link, it should have an attribute that identifies it as a tab (not a link) with a value equal to the ID of the body it should open. Example: `tf-ds-tab-parent="tab-a-1-1"`.
+    -   An ID attribute. Example: `id="accordion-1"`.
+    -   An attribute with a value equal to the same ID as the body. Example: `tf-ds-acc-body-a="accordion-1"`.
+    -   An attribute specifying that it should be open by default. Example: `tf-ds-acc-active-a="true"`.
 
--   **Bodies:** The tab body should have:
+-   **Triggers:** The accordion triggers should have:
 
-    -   An ID attribute. Example: `id="tab-a-1-1"`.
-    -   An attribute with a value equal to the same ID as the body. Example: `tf-ds-tab-body-a="tab-a-1-1"`.
-    -   For each container, only one body should have an attribute specifying that it should be open by default. Example: `tf-ds-tab-a-active="true"`.
+    -   An attribute with a value equal to the ID of the accordion body it should open. Example: `tf-ds-acc-target-a="accordion-1"`.
 
--   **External Links:** The external links should have:
+-   **External Triggers:** The external triggers should have:
 
-    -   An attribute with a value equal to the ID of the body it should open. Example: `tf-ds-tab-external-open-a="tab-a-1-1"`.
-    -   An attribute specifying the ID of the container that contains the body it is opening. Example: `tf-ds-container="tab-a-1"`.
-
--   **Selects:** The select element should have:
-    -   An ID attribute. Example: `id="select-01"`.
-    -   A class to identify it. Example: `class="js--select-item-a"`.
-    -   An attribute with a value equal to the ID of the container it belongs to. Example: `tf-ds-container="tab-a-1"`.
-    -   The value of the options should be the ID of the body it should open. Example: `<option value="tab-a-1-1">...</option>`. -->
+    -   An attribute with a value equal to the ID of the body it should open. Example: `tf-ds-acc-external-target-a="accordion-3"`.
 
 #### HTML
 
 ```sh
-<div class="c--accordion-a js--accordion-a" id="accordion-3" tf-ds-acc-body="accordion-3">
-  <div class="c--accordion-a__hd" tf-ds-acc-target="accordion-3">
-      <p class="c--accordion-a__hd__title">Accordion 3</p>
-  </div>
-  <div class="c--accordion-a__bd">
-      <div class="c--accordion-a__bd__content b--content-a">
-          <p>Accordion content 3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, corrupti! Beatae ratione quas ab, tenetur id ut, debitis error repudiandae sint minima voluptatibus, dolorem expedita molestias. Quam assumenda odit sequi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptatum, commodi, quisquam cum perspiciatis similique facilis blanditiis debitis dicta ullam, temporibus a nulla laboriosam dignissimos veniam sequi molestiae voluptates veritatis.</p>
+ <div class="js--container-a">
+  <div class="c--accordion-a" id="accordion-1" tf-ds-acc-body-a="accordion-1">
+      <div class="c--accordion-a__hd" tf-ds-acc-target-a="accordion-1">
+        <p class="c--accordion-a__hd__title">Accordion 1</p>
+      </div>
+      <div class="c--accordion-a__bd">
+        <div class="c--accordion-a__bd__content b--content-a">
+          <p>Accordion content 1 <a href="#" tf-ds-acc-target-a="accordion-2">open 2</a> Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, corrupti! Beatae ratione quas ab, tenetur id ut, debitis error repudiandae sint minima voluptatibus, dolorem expedita molestias. Quam assumenda odit sequi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptatum, commodi, quisquam cum perspiciatis similique facilis blanditiis debitis dicta ullam, temporibus a nulla laboriosam dignissimos veniam sequi molestiae voluptates veritatis.</p>
+        </div>
       </div>
   </div>
 </div>
@@ -93,8 +85,9 @@ In your HTML file, add the necessary elements for the tabs. Each tab group shoul
 #### CSS Styles
 
 ```sh
+
 .c--accordion-a {
-    border: 1px solid #3ca8b0;
+    border: 1px solid #48773e;
 }
 
 .c--accordion-a__hd {
@@ -102,7 +95,7 @@ In your HTML file, add the necessary elements for the tabs. Each tab group shoul
     width: 100%;
     height: 100%;
     padding: 0.5rem;
-    background-color: rgba(120, 242, 197, 0.4);
+    background-color: rgba(72, 119, 62, 0.8);
     cursor: pointer;
 }
 
@@ -112,7 +105,7 @@ In your HTML file, add the necessary elements for the tabs. Each tab group shoul
     line-height: 1.35;
     letter-spacing: 0.26px;
     font-size: 1rem;
-    color: #3ca8b0;
+    color: #fff;
     text-decoration: none !important;
     margin-bottom: 0px;
 }
@@ -129,7 +122,7 @@ In your HTML file, add the necessary elements for the tabs. Each tab group shoul
 }
 
 .c--accordion-a--is-active .c--accordion-a__hd {
-    border-bottom: 1px solid #3ca8b0;
+    border-bottom: 1px solid #48773e;
 }
 
 .c--accordion-a--is-active .c--accordion-a__hd__artwork--first {
@@ -147,33 +140,43 @@ In your HTML file, add the necessary elements for the tabs. Each tab group shoul
 }
 ```
 
-<!-- ## Customization
+## Customization
 
-You can customize the CSS classes and data attributes used by the tabs package to match your project's styles and structure. Modify the class names and data attributes in both the JavaScript and HTML sections accordingly. -->
+You can customize the CSS classes and data attributes used by the accordion package to match your project's styles and structure. Modify the class names and data attributes in both the JavaScript and HTML sections accordingly.
 
-<!-- ## Options
+## Options
 
-• `tabContainer:` Specifies the ID selector for the main container of the tabs.
+• `accContainer:` Specifies the class of the accordion container.
 
-• `tabActive:` Specifies the active tab.
+• `accActive:` Specifies the ID of the active accordion.
 
-• `tabActiveClass:` Specifies the CSS class for the active tab content. If this attribute is not provided in the HTML, the tab content bodies will be initially hidden, and clicking on a tab will activate the corresponding content.
+• `accActiveClass:` Specifies the CSS class for the active accordion content.
 
-• `tabBodyActiveClass:` Specifies the CSS class for the active tab link.
+• `accBodyClass:` Specifies the CSS class for the accordion body.
 
-• `tabTrigger:` Specifies the attribute value to identify which tab to open.
+• `accClose:` Specifies whether the accordion should close when the active accordion is clicked again.
 
-• `tabParent:` Specifies the attribute value to identify the tab link.
+• `accAllOpen:` Specifies whether all accordions can be open simultaneously.
 
-• `tabBody:` Specifies the attribute value to identify the tab content element.
+• `accTrigger:` Specifies the attribute value used to identify which accordion to open.
 
-• `externalTrigger:` Specifies the attribute value for an external trigger to open the tab.
+• `externalTrigger:` Specifies the attribute value for an external trigger to open the accordion.
 
-• `selectClass:` Specifies the CSS class for a select item.
+• `accBody:` Specifies the attribute value used to identify the accordion body element.
 
-• `onChange():` Specifies a callback function to be executed when the tab changes.
+• `onChange():` Specifies a callback function to be executed when the accordion changes.
 
-• `mediaQuerySelect:` Specifies the breakpoint at which to activate mobile selection behavior. When the window width is less than the specified value, the tabs are replaced with a select element for better mobile user experience -->
+## Open an Accordion
+
+You can use the `openAccordion()` function to programmatically open an accordion item. The function allows you to specify the ID of the accordion item you want to open. Here's an example of how you can use it:
+
+```sh
+setTimeout(() => {
+    this.accordionA.openAccordion("accordion-2");
+}, 1500);
+```
+
+This will open the accordion item with the ID "accordion-2" after 1.5 seconds.
 
 ## Destroy
 
@@ -184,73 +187,66 @@ const accordion = new Accordion(options);
 accordion.destroy();
 ```
 
-<!-- ## More than one group of tabs
+## More than one group of accordions
 
-If you have two or more groups of tabs, you can instantiate the JS class in the following way:
+If you have two or more groups of accordions, you can instantiate the JS class in the following way:
 
 ```sh
-import Tabs from "@teamthunderfoot/tabs";
-import { breakpoints } from "@teamthunderfoot/breakpoints";
+import Accordion from "@teamthunderfoot/accordion";
 
 class Page {
   constructor() {
-    this.tabsA = null;
-    this.tabsB = null;
+    this.accordionA = null
+    this.accordionB = null
 
     this.init();
     this.events();
   }
 
   init() {
-    const bk = breakpoints.reduce(
-      (target, inner) => Object.assign(target, inner),
-      {}
-    );
 
-    document.querySelectorAll(".js--tabs-a").forEach((el) => {
-      this.tabsA = new Tabs({
-        tabContainer: "tf-ds-container",
-        tabActive: "tf-ds-tab-a-active",
-        tabActiveClass: "b--tabs-a__bd__item--is-active",
-        tabBodyActiveClass: "b--tabs-a__hd__list-item__link--is-active",
-        tabTrigger: "tf-ds-tab-to-open-a",
-        tabParent: "tf-ds-tab-parent",
-        tabBody: "tf-ds-tab-body-a",
-        externalTrigger: "tf-ds-tab-external-open-a",
-        selectClass: "js--select-item-a",
-        mediaQuerySelect: bk.tablets, // 810
-        onChange: () => {
-          // do something
-        },
-      });
-    });
+    document.querySelectorAll(".js--container-a").forEach((accContainer) => {
+        this.accordionA = new Accordion({
+            accContainer: accContainer,
+            accActive: "tf-ds-acc-active-a",
+            accActiveClass: "c--accordion-a--is-active",
+            accBodyClass: "c--accordion-a__bd",
+            accClose: false,
+            accAllOpen: false,
+            accTrigger: "tf-ds-acc-target-a",
+            accExternalTrigger: "tf-ds-acc-external-target-a",
+            accBody: "tf-ds-acc-body-a",
+            onChange: () => {
+                //do something
+            },
+        })
+    })
 
-    document
-      .querySelector(".js--tabs-destroy")
-      .addEventListener("click", (e) => {
-        e.preventDefault();
-        this.destroyTabs();
-      });
+    document.querySelector(".js--accordion-destroy")
+    .addEventListener("click", (e) => {
+            e.preventDefault()
+            this.destroyAccordion()
+    })
   }
 
   events() {
   }
 
-  destroyTabs() {
-    if (this.tabsA) {
-      this.tabsA.destroy();
-      this.tabsA = null;
+  destroyAccordion() {
+    if (this.accordionA) {
+        this.accordionA.destroy()
+        this.accordionA = null
     }
 
-    if (this.tabsB) {
-      this.tabsB.destroy();
-      this.tabsB = null;
+    if (this.accordionB) {
+        this.accordionB.destroy()
+        this.accordionB = null
     }
-  }
+}
 }
 
 export default Page;
 
 new Page();
 
-``` -->
+```
