@@ -49,7 +49,7 @@ class Accordion {
     }
 
     setDefaultActiveAcc() {
-        const accordions = document.querySelectorAll(`[${this.accActive}]`)
+        const accordions = this.accContainer.querySelectorAll(`[${this.accActive}]`)
         accordions.forEach((accordion) => {
             this.JSUTIL.addClass(accordion, this.accActiveClass)
         })
