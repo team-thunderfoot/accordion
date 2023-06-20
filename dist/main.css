@@ -10,7 +10,8 @@
     height: 100%;
     padding: 0.5rem;
     background-color: rgba(72, 119, 62, 0.8);
-    cursor: pointer;
+    border: none;
+    text-align: left;
 }
 
 .c--accordion-a__hd__title {
@@ -63,8 +64,9 @@
     width: 100%;
     height: 100%;
     padding: 0.5rem;
-    background-color: rgba(#f36d25, 0.4);
-    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    text-align: left;
 }
 
 .c--accordion-b__hd__title {

@@ -96,7 +96,8 @@ In your HTML file, add the necessary elements for the accordion. Each accordion 
     height: 100%;
     padding: 0.5rem;
     background-color: rgba(72, 119, 62, 0.8);
-    cursor: pointer;
+    border: none;
+    text-align: left;
 }
 
 .c--accordion-a__hd__title {
