@@ -1,4 +1,5 @@
 import Accordion from "./Accordion"
+
 class Page {
     constructor() {
         this.accordionA = null
@@ -28,7 +29,7 @@ class Page {
             accActive: "tf-ds-acc-active-a",
             accActiveClass: "c--accordion-a--is-active",
             accBodyClass: "c--accordion-a__bd",
-            accClose: true,
+            accClose: false,
             accAllOpen: false,
             accTrigger: "tf-ds-acc-target-a",
             accBody: "tf-ds-acc-body-a",
@@ -41,8 +42,8 @@ class Page {
             accActive: "tf-ds-acc-active-b",
             accActiveClass: "c--accordion-b--is-active",
             accBodyClass: "c--accordion-b__bd",
-            accClose: false,
-            accAllOpen: false,
+            accClose: true,
+            accAllOpen: true,
             accTrigger: "tf-ds-acc-target-b",
             accBody: "tf-ds-acc-body-b",
             onChange: () => {

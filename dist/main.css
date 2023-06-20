@@ -1,5 +1,7 @@
+// Accordion A
+
 .c--accordion-a {
-    border: 1px solid #3ca8b0;
+    border: 1px solid #48773e;
 }
 
 .c--accordion-a__hd {
@@ -7,7 +9,7 @@
     width: 100%;
     height: 100%;
     padding: 0.5rem;
-    background-color: rgba(120, 242, 197, 0.4);
+    background-color: rgba(72, 119, 62, 0.8);
     cursor: pointer;
 }
 
@@ -17,7 +19,7 @@
     line-height: 1.35;
     letter-spacing: 0.26px;
     font-size: 1rem;
-    color: #3ca8b0;
+    color: #fff;
     text-decoration: none !important;
     margin-bottom: 0px;
 }
@@ -34,7 +36,7 @@
 }
 
 .c--accordion-a--is-active .c--accordion-a__hd {
-    border-bottom: 1px solid #3ca8b0;
+    border-bottom: 1px solid #48773e;
 }
 
 .c--accordion-a--is-active .c--accordion-a__hd__artwork--first {
@@ -103,4 +105,27 @@
     max-height: 99em;
     -webkit-transition: max-height 0.9s ease-in-out;
     transition: max-height 0.9s ease-in-out;
+}
+
+// Card A
+
+.c--card-a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #48773e;
+    padding: 64px 32px;
+}
+
+.c--card-a__title {
+    font-size: 2rem;
+    line-height: 1.2rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.c--card-a__subtitle {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1rem;
 }

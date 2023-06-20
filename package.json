@@ -24,7 +24,8 @@
   },
   "dependencies": {
     "@andresclua/jsutil": "^2.0.4",
-    "@babel/core": "^7.14.3"
+    "@babel/core": "^7.14.3",
+    "tiny-slider": "^2.9.4"
   },
   "keywords": [
     "accordion"
