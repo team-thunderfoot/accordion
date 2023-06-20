@@ -2,12 +2,14 @@ import JSUTIL from "@andresclua/jsutil"
 
 class Accordion {
     constructor(payload) {
+        this.accContainer = payload.accContainer
         this.accActive = payload.accActive
         this.accActiveClass = payload.accActiveClass
         this.accBodyClass = payload.accBodyClass
         this.accClose = payload.accClose
         this.accAllOpen = payload.accAllOpen
         this.accTrigger = payload.accTrigger
+        this.accExternalTrigger = payload.accExternalTrigger
         this.accBody = payload.accBody
         this.onChange = payload.onChange
 
@@ -17,21 +19,35 @@ class Accordion {
     }
 
     init() {
+        // Set the default active accordion
         this.setDefaultActiveAcc()
     }
 
     events() {
-        // Assign events to accordion trigger elements
-        const triggers = document.querySelectorAll(`[${this.accTrigger}]`)
+        // Assign events to accordion trigger elements within the specified container
+        const triggers = this.accContainer.querySelectorAll(`[${this.accTrigger}]`)
         triggers.forEach((trigger) => {
+            const accordionID = trigger.getAttribute(this.accTrigger)
+
+            // Add a click event listener to each accordion trigger
             trigger.addEventListener("click", (e) => {
                 e.preventDefault()
-                this.toggleAcc(trigger)
+                this.toggleAcc(accordionID)
+            })
+        })
+
+        // Assign events to accordion external trigger elements within the specified container
+        const externalTriggers = document.querySelectorAll(`[${this.accExternalTrigger}]`)
+        externalTriggers.forEach((externalTrigger) => {
+            const accordionID = externalTrigger.getAttribute(this.accExternalTrigger)
+
+            externalTrigger.addEventListener("click", (e) => {
+                e.preventDefault()
+                this.toggleAcc(accordionID)
             })
         })
     }
 
-    // Set the default active accordion
     setDefaultActiveAcc() {
         const accordions = document.querySelectorAll(`[${this.accActive}]`)
         accordions.forEach((accordion) => {
@@ -39,19 +55,18 @@ class Accordion {
         })
     }
 
-    toggleAcc(trigger) {
-        // Get the accordion ID from the trigger element
-        let accordionID = trigger.getAttribute(this.accTrigger)
-        let accBody = document.getElementById(accordionID)
+    toggleAcc(accordionID) {
+        // Get the accordion element based on its ID
+        const accordion = this.accContainer.querySelector(`#${accordionID}`)
 
         // Check if the accordion exists and make changes to its state
-        if (accBody) {
-            const isActive = accBody.classList.contains(this.accActiveClass)
+        if (accordion) {
+            const isActive = accordion.classList.contains(this.accActiveClass)
 
             if (this.accClose) {
-                isActive ? this.JSUTIL.removeClass(accBody, this.accActiveClass) : this.JSUTIL.addClass(accBody, this.accActiveClass)
+                isActive ? this.JSUTIL.removeClass(accordion, this.accActiveClass) : this.JSUTIL.addClass(accordion, this.accActiveClass)
             } else if (!isActive) {
-                this.JSUTIL.addClass(accBody, this.accActiveClass)
+                this.JSUTIL.addClass(accordion, this.accActiveClass)
             }
 
             if (!this.accAllOpen) {
@@ -62,15 +77,14 @@ class Accordion {
         if (this.onChange) this.onChange()
     }
 
-    openAccordion(targetID) {
+    openAccordion(accordionID) {
         this.hideAccordion()
-        const accordion = document.getElementById(targetID)
+        const accordion = document.getElementById(accordionID)
         this.JSUTIL.addClass(accordion, this.accActiveClass)
 
         if (this.onChange) this.onChange()
     }
 
-    // Hides all active clases
     hideAccordion() {
         const accBodies = document.querySelectorAll(`[${this.accBody}]`)
         accBodies.forEach((accBody) => {
@@ -78,10 +92,10 @@ class Accordion {
         })
     }
 
-    hideAllAccsExceptActual(targetID) {
-        const accBodies = document.querySelectorAll(`[${this.accBody}]`)
+    hideAllAccsExceptActual(accordionID) {
+        const accBodies = this.accContainer.querySelectorAll(`[${this.accBody}]`)
         accBodies.forEach((accBody) => {
-            if (accBody.getAttribute(`${this.accBody}`) !== targetID) {
+            if (accBody.getAttribute(`${this.accBody}`) !== accordionID) {
                 this.JSUTIL.removeClass(accBody, this.accActiveClass)
             }
         })
