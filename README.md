@@ -74,7 +74,7 @@ In your HTML file, add the necessary elements for the accordion. Each accordion 
         <p class="c--accordion-a__hd__title">Accordion 1</p>
       </button>
       <div class="c--accordion-a__bd">
-        <div class="c--accordion-a__bd__content b--content-a">
+        <div class="c--accordion-a__bd__content c--content-a">
           <p>Accordion content 1 <a href="#" tf-ds-acc-target-a="accordion-2">open 2</a> Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, corrupti! Beatae ratione quas ab, tenetur id ut, debitis error repudiandae sint minima voluptatibus, dolorem expedita molestias. Quam assumenda odit sequi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptatum, commodi, quisquam cum perspiciatis similique facilis blanditiis debitis dicta ullam, temporibus a nulla laboriosam dignissimos veniam sequi molestiae voluptates veritatis.</p>
         </div>
       </div>

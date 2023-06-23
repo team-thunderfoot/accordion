@@ -1,122 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="dist/main.css">
-    <title>Accordion - By Thunderfoot</title>
-</head>
-<body>
-  <section class="mt-2 mb-2">
-      <div class="container">
-          <div class="row">
-              <div class="col">
-                  <h5 class="mb-3">Accordion</h5>
-                  <button class="mb-4 js--accordion-destroy">Destroy Accordion</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="dist/main.css" />
+        <title>Accordion - By Thunderfoot</title>
+    </head>
+    <body>
+        <section class="mt-2 mb-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h5 class="mb-3">Accordion</h5>
+                        <button class="mb-4 js--accordion-destroy">Destroy Accordion</button>
 
-                  <!-- Accordion A -->
-                  <div class="mb-4">
-                    <div class="c--accordion-a js--accordion-a" id="accordion-1" tf-ds-acc-body="accordion-1"> 
-                        <div class="c--accordion-a__hd" tf-ds-acc-target="accordion-1">
-                            <p class="c--accordion-a__hd__title">Accordion 1</p>
-                        </div>
-                        <div class="c--accordion-a__bd">
-                            <div class="c--accordion-a__bd__content b--content-a">
-                                <p>Accordion content 1 <a href="#" tf-ds-acc-target="accordion-2">open 2</a> Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, corrupti! Beatae ratione quas ab, tenetur id ut, debitis error repudiandae sint minima voluptatibus, dolorem expedita molestias. Quam assumenda odit sequi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptatum, commodi, quisquam cum perspiciatis similique facilis blanditiis debitis dicta ullam, temporibus a nulla laboriosam dignissimos veniam sequi molestiae voluptates veritatis.</p>
+                        <!-- Accordion A -->
+                        <div class="mb-4">
+                            <div
+                                class="c--accordion-a js--accordion-a"
+                                id="accordion-1"
+                                tf-ds-acc-body="accordion-1"
+                            >
+                                <div class="c--accordion-a__hd" tf-ds-acc-target="accordion-1">
+                                    <p class="c--accordion-a__hd__title">Accordion 1</p>
+                                </div>
+                                <div class="c--accordion-a__bd">
+                                    <div class="c--accordion-a__bd__content c--content-a">
+                                        <p>
+                                            Accordion content 1
+                                            <a href="#" tf-ds-acc-target="accordion-2">open 2</a>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            Necessitatibus, corrupti! Beatae ratione quas ab,
+                                            tenetur id ut, debitis error repudiandae sint minima
+                                            voluptatibus, dolorem expedita molestias. Quam assumenda
+                                            odit sequi! Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Voluptatem voluptatum, commodi,
+                                            quisquam cum perspiciatis similique facilis blanditiis
+                                            debitis dicta ullam, temporibus a nulla laboriosam
+                                            dignissimos veniam sequi molestiae voluptates veritatis.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="c--accordion-a js--accordion-a"
+                                id="accordion-2"
+                                tf-ds-acc-body="accordion-2"
+                            >
+                                <div class="c--accordion-a__hd" tf-ds-acc-target="accordion-2">
+                                    <p class="c--accordion-a__hd__title">Accordion 2</p>
+                                </div>
+                                <div class="c--accordion-a__bd">
+                                    <div class="c--accordion-a__bd__content c--content-a">
+                                        <p>
+                                            Accordion content 2
+                                            <a href="#" tf-ds-acc-target="accordion-3">open 3</a>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                            Necessitatibus, corrupti! Beatae ratione quas ab,
+                                            tenetur id ut, debitis error repudiandae sint minima
+                                            voluptatibus, dolorem expedita molestias. Quam assumenda
+                                            odit sequi! Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Voluptatem voluptatum, commodi,
+                                            quisquam cum perspiciatis similique facilis blanditiis
+                                            debitis dicta ullam, temporibus a nulla laboriosam
+                                            dignissimos veniam sequi molestiae voluptates veritatis.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="c--accordion-a js--accordion-a"
+                                id="accordion-3"
+                                tf-ds-acc-body="accordion-3"
+                            >
+                                <div class="c--accordion-a__hd" tf-ds-acc-target="accordion-3">
+                                    <p class="c--accordion-a__hd__title">Accordion 3</p>
+                                </div>
+                                <div class="c--accordion-a__bd">
+                                    <div class="c--accordion-a__bd__content c--content-a">
+                                        <p>
+                                            Accordion content 3 Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Necessitatibus, corrupti!
+                                            Beatae ratione quas ab, tenetur id ut, debitis error
+                                            repudiandae sint minima voluptatibus, dolorem expedita
+                                            molestias. Quam assumenda odit sequi! Lorem ipsum dolor
+                                            sit amet consectetur adipisicing elit. Voluptatem
+                                            voluptatum, commodi, quisquam cum perspiciatis similique
+                                            facilis blanditiis debitis dicta ullam, temporibus a
+                                            nulla laboriosam dignissimos veniam sequi molestiae
+                                            voluptates veritatis.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="c--accordion-a js--accordion-a" id="accordion-2" tf-ds-acc-body="accordion-2"> 
-                        <div class="c--accordion-a__hd" tf-ds-acc-target="accordion-2">
-                            <p class="c--accordion-a__hd__title">Accordion 2</p>
-                        </div> 
-                        <div class="c--accordion-a__bd">
-                            <div class="c--accordion-a__bd__content b--content-a">
-                                <p>Accordion content 2 <a href="#" tf-ds-acc-target="accordion-3">open 3</a> Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, corrupti! Beatae ratione quas ab, tenetur id ut, debitis error repudiandae sint minima voluptatibus, dolorem expedita molestias. Quam assumenda odit sequi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptatum, commodi, quisquam cum perspiciatis similique facilis blanditiis debitis dicta ullam, temporibus a nulla laboriosam dignissimos veniam sequi molestiae voluptates veritatis.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="c--accordion-a js--accordion-a" id="accordion-3" tf-ds-acc-body="accordion-3"> 
-                        <div class="c--accordion-a__hd" tf-ds-acc-target="accordion-3">
-                            <p class="c--accordion-a__hd__title">Accordion 3</p>
-                        </div>
-                        <div class="c--accordion-a__bd">
-                            <div class="c--accordion-a__bd__content b--content-a">
-                                <p>Accordion content 3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, corrupti! Beatae ratione quas ab, tenetur id ut, debitis error repudiandae sint minima voluptatibus, dolorem expedita molestias. Quam assumenda odit sequi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptatum, commodi, quisquam cum perspiciatis similique facilis blanditiis debitis dicta ullam, temporibus a nulla laboriosam dignissimos veniam sequi molestiae voluptates veritatis.</p>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
 
-                  <!-- Accordion B -->
-                  <div class="mb-4">
-                    <div class="c--accordion-b js--accordion-b" id="accordion-4" tf-ds-acc-body-b="accordion-4" tf-ds-acc-active-b="true"> 
-                        <div class="c--accordion-b__hd" tf-ds-acc-target-b="accordion-4">
-                          <p class="c--accordion-b__hd__title">Accordion 4</p>
-                        </div>
-                        <div class="c--accordion-b__bd">
-                          <div class="c--slider-a">
-                            <div class="c--slider-a__wrapper">
-                                <div class="c--slider-a__wrapper__item">
-                                  <div class="c--card-a">
-                                    <h3 class="c--card-a__title">Lorem ipsum</h3>
-                                    <p class="c--card-a__subtitle">Solution description lorem ipsum dolor sit amet consectetur.</p>
+                        <!-- Accordion B -->
+                        <div class="mb-4">
+                            <div
+                                class="c--accordion-b js--accordion-b"
+                                id="accordion-4"
+                                tf-ds-acc-body-b="accordion-4"
+                                tf-ds-acc-active-b="true"
+                            >
+                                <div class="c--accordion-b__hd" tf-ds-acc-target-b="accordion-4">
+                                    <p class="c--accordion-b__hd__title">Accordion 4</p>
                                 </div>
-                                </div>
-                                <div class="c--slider-a__wrapper__item">
-                                  <div class="c--card-a">
-                                    <h3 class="c--card-a__title">Lorem ipsum</h3>
-                                    <p class="c--card-a__subtitle">Solution description lorem ipsum dolor sit amet consectetur.</p>
-                                </div>
-                                </div>
-                                <div class="c--slider-a__wrapper__item">
-                                  <div class="c--card-a">
-                                    <h3 class="c--card-a__title">Lorem ipsum</h3>
-                                    <p class="c--card-a__subtitle">Solution description lorem ipsum dolor sit amet consectetur.</p>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="c--slider-a__controls">
-                                <button class="c--slider-a__controls__btn g--icon-01 g--icon-01--second js-prev" aria-label="previous slide">
-                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8.5 16.8711L0.5 8.87109L8.5 0.871094L9.925 2.27109L4.325 7.87109L16.5 7.87109V9.87109L4.325 9.87109L9.925 15.4711L8.5 16.8711Z" fill="#02224B" />
-                                    </svg>
-                                </button>
-    
-                                <button class="c--slider-a__controls__btn g--icon-01 g--icon-01--second js-next" aria-label="next slide">
-                                    <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M8.5 0.871093L16.5 8.87109L8.5 16.8711L7.075 15.4711L12.675 9.87109L0.500001 9.87109L0.500001 7.87109L12.675 7.87109L7.075 2.27109L8.5 0.871093Z" fill="#02224B" />
-                                    </svg>
-                                </button>
-                            </div>
-                          </div>
-                          <!-- <div class="c--accordion-b__bd__content b--content-a">
+                                <div class="c--accordion-b__bd">
+                                    <div class="c--slider-a">
+                                        <div class="c--slider-a__wrapper">
+                                            <div class="c--slider-a__wrapper__item">
+                                                <div class="c--card-a">
+                                                    <h3 class="c--card-a__title">Lorem ipsum</h3>
+                                                    <p class="c--card-a__subtitle">
+                                                        Solution description lorem ipsum dolor sit
+                                                        amet consectetur.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="c--slider-a__wrapper__item">
+                                                <div class="c--card-a">
+                                                    <h3 class="c--card-a__title">Lorem ipsum</h3>
+                                                    <p class="c--card-a__subtitle">
+                                                        Solution description lorem ipsum dolor sit
+                                                        amet consectetur.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="c--slider-a__wrapper__item">
+                                                <div class="c--card-a">
+                                                    <h3 class="c--card-a__title">Lorem ipsum</h3>
+                                                    <p class="c--card-a__subtitle">
+                                                        Solution description lorem ipsum dolor sit
+                                                        amet consectetur.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="c--slider-a__controls">
+                                            <button
+                                                class="c--slider-a__controls__btn g--icon-01 g--icon-01--second js-prev"
+                                                aria-label="previous slide"
+                                            >
+                                                <svg
+                                                    width="17"
+                                                    height="17"
+                                                    viewBox="0 0 17 17"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        d="M8.5 16.8711L0.5 8.87109L8.5 0.871094L9.925 2.27109L4.325 7.87109L16.5 7.87109V9.87109L4.325 9.87109L9.925 15.4711L8.5 16.8711Z"
+                                                        fill="#02224B"
+                                                    />
+                                                </svg>
+                                            </button>
+
+                                            <button
+                                                class="c--slider-a__controls__btn g--icon-01 g--icon-01--second js-next"
+                                                aria-label="next slide"
+                                            >
+                                                <svg
+                                                    width="17"
+                                                    height="17"
+                                                    viewBox="0 0 17 17"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        d="M8.5 0.871093L16.5 8.87109L8.5 16.8711L7.075 15.4711L12.675 9.87109L0.500001 9.87109L0.500001 7.87109L12.675 7.87109L7.075 2.27109L8.5 0.871093Z"
+                                                        fill="#02224B"
+                                                    />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="c--accordion-b__bd__content c--content-a">
                             <p>Accordion content 4 <a href="#" tf-ds-acc-target-b="accordion-5">open 5</a> Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, corrupti! Beatae ratione quas ab, tenetur id ut, debitis error repudiandae sint minima voluptatibus, dolorem expedita molestias. Quam assumenda odit sequi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptatum, commodi, quisquam cum perspiciatis similique facilis blanditiis debitis dicta ullam, temporibus a nulla laboriosam dignissimos veniam sequi molestiae voluptates veritatis.</p>
                           </div> -->
-                        </div>
-                    </div>
-                    <div class="c--accordion-b js--accordion-b" id="accordion-5" tf-ds-acc-body-b="accordion-5"> 
-                        <div class="c--accordion-b__hd" tf-ds-acc-target-b="accordion-5">
-                          <p class="c--accordion-b__hd__title">Accordion 5</p>
-                        </div>
-                        <div class="c--accordion-b__bd">
-                          <div class="c--accordion-b__bd__content b--content-a">                    
-                                <p>Accordion content 5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, corrupti! Beatae ratione quas ab, tenetur id ut, debitis error repudiandae sint minima voluptatibus, dolorem expedita molestias. Quam assumenda odit sequi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptatum, commodi, quisquam cum perspiciatis similique facilis blanditiis debitis dicta ullam, temporibus a nulla laboriosam dignissimos veniam sequi molestiae voluptates veritatis.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="c--accordion-b js--accordion-b"
+                                id="accordion-5"
+                                tf-ds-acc-body-b="accordion-5"
+                            >
+                                <div class="c--accordion-b__hd" tf-ds-acc-target-b="accordion-5">
+                                    <p class="c--accordion-b__hd__title">Accordion 5</p>
+                                </div>
+                                <div class="c--accordion-b__bd">
+                                    <div class="c--accordion-b__bd__content c--content-a">
+                                        <p>
+                                            Accordion content 5 Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit. Necessitatibus, corrupti!
+                                            Beatae ratione quas ab, tenetur id ut, debitis error
+                                            repudiandae sint minima voluptatibus, dolorem expedita
+                                            molestias. Quam assumenda odit sequi! Lorem ipsum dolor
+                                            sit amet consectetur adipisicing elit. Voluptatem
+                                            voluptatum, commodi, quisquam cum perspiciatis similique
+                                            facilis blanditiis debitis dicta ullam, temporibus a
+                                            nulla laboriosam dignissimos veniam sequi molestiae
+                                            voluptates veritatis.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                  </div>
-              </div>
-          </div>
-          <div class="row">
-            <div class="col">
-                  <p>Open Accordion 3 by clicking <a href="#" tf-ds-acc-target-a="accordion-3">here</a></p>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            Open Accordion 3 by clicking
+                            <a href="#" tf-ds-acc-target-a="accordion-3">here</a>
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
-      </div>
-  </section>
-  <script src="/dist/main.js"></script>
-</body>
+        </section>
+        <script src="/dist/main.js"></script>
+    </body>
 </html>
