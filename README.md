@@ -24,13 +24,15 @@ class Page {
   init() {
 
     const accordion = new Accordion({
-        accActive: "accordion-1",
+        accContainer: accContainer,
+        accActive: "tf-ds-acc-active-a",
         accActiveClass: "c--accordion-a--is-active",
         accBodyClass: "c--accordion-a__bd",
-        accClose: true,
+        accClose: false,
         accAllOpen: false,
-        accTrigger: "tf-ds-acc-target",
-        accBody: "tf-ds-acc-body",
+        accTrigger: "tf-ds-acc-target-a",
+        accExternalTrigger: "tf-ds-acc-external-target-a",
+        accBody: "tf-ds-acc-body-a",
         onChange: () => {
             //do something
         },
