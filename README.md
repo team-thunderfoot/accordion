@@ -49,6 +49,47 @@ new Page();
 
 ```
 
+## Usage for Nuxt
+
+1 - Create a file Accordion.js inside plugins folder & add this.
+
+```sh
+import Accordion from "@teamthunderfoot/accordion";
+
+export default ({ app },inject) => {
+    inject('Accordion', () => new Accordion({
+        accActive: "tf-ds-acc-active-a",
+        accContainer : document.querySelector(".js--container-a"),
+        accActiveClass: "c--accordion-a--is-active",
+        accBodyClass: "c--accordion-a__bd",
+        accClose: true,
+        accAllOpen: false,
+        accTrigger: "tf-ds-acc-target-a",
+        accBody: "tf-ds-acc-body-a",
+        onChange: () => {
+            //do something
+        },
+    }) );
+};
+```
+
+2 - Reference in your nuxt.config.js
+
+```sh
+plugins: [
+    { src: '~/plugins/collapse.js', ssr: false }
+]
+```
+
+3- In your Page.vue
+
+```sh
+async mounted() {
+    await new Promise(resolve => {
+    this.$Accordion();
+  }
+```
+
 In your HTML file, add the necessary elements for the accordion. Each accordion item should have a specific structure that includes a header and hidden content.
 
 -   **Accordion container:** The accordion container element should have a class. Example: `class="js--accordion-a"`.
