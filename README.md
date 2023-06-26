@@ -77,7 +77,7 @@ export default ({ app },inject) => {
 
 ```sh
 plugins: [
-    { src: '~/plugins/collapse.js', ssr: false }
+    { src: '~/plugins/accordion.js', ssr: false }
 ]
 ```
 
