@@ -80,13 +80,31 @@ plugins: [
     { src: '~/plugins/accordion.js', ssr: false }
 ]
 ```
+3- In you accordion.js
+```sh
+import Accordion from "@teamthunderfoot/accordion";
+export default ({ app },inject) => {
+    inject('Accordion', () => new Accordion({
+        accContainer:  document.querySelector(".js--container-a"),
+        accActive: "tf-ds-acc-active-a",
+        accActiveClass: "c--accordion-a--is-active",
+        accBodyClass: "c--accordion-a__bd",
+        accClose: false,
+        accAllOpen: false,
+        accTrigger: "tf-ds-acc-target-a",
+        accExternalTrigger: "tf-ds-acc-external-target-a",
+        accBody: "tf-ds-acc-body-a",
+    }) );
+};
+```
 
-3- In your Page.vue
+4- In your Page.vue
 
 ```sh
 async mounted() {
     await new Promise(resolve => {
-    this.$Accordion();
+        this.$Accordion();
+    })
   }
 ```
 
