@@ -102,10 +102,10 @@ export default ({ app },inject) => {
 
 ```sh
 async mounted() {
-    await new Promise(resolve => {
+    setTimeout(() => {
         this.$Accordion();
-    })
-  }
+    }, 200)
+}
 ```
 
 In your HTML file, add the necessary elements for the accordion. Each accordion item should have a specific structure that includes a header and hidden content.
