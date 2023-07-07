@@ -24,7 +24,7 @@ class Page {
   init() {
 
     const accordion = new Accordion({
-        accContainer: accContainer,
+        accContainer:  document.querySelector(".js--container-a"),
         accActive: "tf-ds-acc-active-a",
         accActiveClass: "c--accordion-a--is-active",
         accBodyClass: "c--accordion-a__bd",
