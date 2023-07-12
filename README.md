@@ -24,7 +24,7 @@ class Page {
   init() {
 
     const accordion = new Accordion({
-        accContainer:  document.querySelector(".js--container-a"),
+        element:  document.querySelector(".js--container-a"),
         accActive: "tf-ds-acc-active-a",
         accActiveClass: "c--accordion-a--is-active",
         accBodyClass: "c--accordion-a__bd",
@@ -58,8 +58,8 @@ import Accordion from "@teamthunderfoot/accordion";
 
 export default ({ app },inject) => {
     inject('Accordion', () => new Accordion({
+        element : document.querySelector(".js--container-a"),
         accActive: "tf-ds-acc-active-a",
-        accContainer : document.querySelector(".js--container-a"),
         accActiveClass: "c--accordion-a--is-active",
         accBodyClass: "c--accordion-a__bd",
         accClose: true,
@@ -80,12 +80,14 @@ plugins: [
     { src: '~/plugins/accordion.js', ssr: false }
 ]
 ```
+
 3- In you accordion.js
+
 ```sh
 import Accordion from "@teamthunderfoot/accordion";
 export default ({ app },inject) => {
     inject('Accordion', () => new Accordion({
-        accContainer:  document.querySelector(".js--container-a"),
+        element:  document.querySelector(".js--container-a"),
         accActive: "tf-ds-acc-active-a",
         accActiveClass: "c--accordion-a--is-active",
         accBodyClass: "c--accordion-a__bd",
@@ -208,7 +210,7 @@ You can customize the CSS classes and data attributes used by the accordion pack
 
 ## Options
 
-• `accContainer:` Specifies the class of the accordion container.
+• `element:` Specifies the class of the accordion container.
 
 • `accActive:` Specifies the ID of the active accordion.
 
@@ -267,9 +269,9 @@ class Page {
 
   init() {
 
-    document.querySelectorAll(".js--container-a").forEach((accContainer) => {
+    document.querySelectorAll(".js--container-a").forEach((element) => {
         this.accordionA = new Accordion({
-            accContainer: accContainer,
+            element: element,
             accActive: "tf-ds-acc-active-a",
             accActiveClass: "c--accordion-a--is-active",
             accBodyClass: "c--accordion-a__bd",

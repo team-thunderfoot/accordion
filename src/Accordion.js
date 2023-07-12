@@ -2,7 +2,7 @@ import JSUTIL from "@andresclua/jsutil"
 
 class Accordion {
     constructor(payload) {
-        this.accContainer = payload.accContainer
+        this.element = payload.element
         this.accActive = payload.accActive
         this.accActiveClass = payload.accActiveClass
         this.accBodyClass = payload.accBodyClass
@@ -25,7 +25,7 @@ class Accordion {
 
     events() {
         // Assign events to accordion trigger elements within the specified container
-        const triggers = this.accContainer.querySelectorAll(`[${this.accTrigger}]`)
+        const triggers = this.element.querySelectorAll(`[${this.accTrigger}]`)
         triggers.forEach((trigger) => {
             const accordionID = trigger.getAttribute(this.accTrigger)
 
@@ -49,7 +49,7 @@ class Accordion {
     }
 
     setDefaultActiveAcc() {
-        const accordions = this.accContainer.querySelectorAll(`[${this.accActive}]`)
+        const accordions = this.element.querySelectorAll(`[${this.accActive}]`)
         accordions.forEach((accordion) => {
             this.JSUTIL.addClass(accordion, this.accActiveClass)
         })
@@ -57,14 +57,16 @@ class Accordion {
 
     toggleAcc(accordionID) {
         // Get the accordion element based on its ID
-        const accordion = this.accContainer.querySelector(`#${accordionID}`)
+        const accordion = this.element.querySelector(`#${accordionID}`)
 
         // Check if the accordion exists and make changes to its state
         if (accordion) {
             const isActive = accordion.classList.contains(this.accActiveClass)
 
             if (this.accClose) {
-                isActive ? this.JSUTIL.removeClass(accordion, this.accActiveClass) : this.JSUTIL.addClass(accordion, this.accActiveClass)
+                isActive
+                    ? this.JSUTIL.removeClass(accordion, this.accActiveClass)
+                    : this.JSUTIL.addClass(accordion, this.accActiveClass)
             } else if (!isActive) {
                 this.JSUTIL.addClass(accordion, this.accActiveClass)
             }
@@ -93,7 +95,7 @@ class Accordion {
     }
 
     hideAllAccsExceptActual(accordionID) {
-        const accBodies = this.accContainer.querySelectorAll(`[${this.accBody}]`)
+        const accBodies = this.element.querySelectorAll(`[${this.accBody}]`)
         accBodies.forEach((accBody) => {
             if (accBody.getAttribute(`${this.accBody}`) !== accordionID) {
                 this.JSUTIL.removeClass(accBody, this.accActiveClass)

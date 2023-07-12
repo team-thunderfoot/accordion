@@ -8,9 +8,9 @@ class Page {
         this.events()
     }
     init() {
-        document.querySelectorAll(".js--container-a").forEach((accContainer) => {
+        document.querySelectorAll(".js--container-a").forEach((element) => {
             this.accordionA = new Accordion({
-                accContainer: accContainer,
+                element: element,
                 accActive: "tf-ds-acc-active-a",
                 accActiveClass: "c--accordion-a--is-active",
                 accBodyClass: "c--accordion-a__bd",
@@ -25,9 +25,9 @@ class Page {
             })
         })
 
-        document.querySelectorAll(".js--container-b").forEach((accContainer) => {
+        document.querySelectorAll(".js--container-b").forEach((element) => {
             this.accordionB = new Accordion({
-                accContainer: accContainer,
+                element: element,
                 accActive: "tf-ds-acc-active-b",
                 accActiveClass: "c--accordion-b--is-active",
                 accBodyClass: "c--accordion-b__bd",
