@@ -33,7 +33,10 @@ class Page {
         accTrigger: "tf-ds-acc-target-a",
         accExternalTrigger: "tf-ds-acc-external-target-a",
         accBody: "tf-ds-acc-body-a",
-        onChange: () => {
+        onHide: () => {
+            //do something
+        },
+        onShow: () => {
             //do something
         },
     })
@@ -66,7 +69,10 @@ export default ({ app },inject) => {
         accAllOpen: false,
         accTrigger: "tf-ds-acc-target-a",
         accBody: "tf-ds-acc-body-a",
-        onChange: () => {
+        onHide: () => {
+            //do something
+        },
+        onShow: () => {
             //do something
         },
     }) );
@@ -96,6 +102,12 @@ export default ({ app },inject) => {
         accTrigger: "tf-ds-acc-target-a",
         accExternalTrigger: "tf-ds-acc-external-target-a",
         accBody: "tf-ds-acc-body-a",
+        onHide: () => {
+            //do something
+        },
+        onShow: () => {
+            //do something
+        },
     }) );
 };
 ```
@@ -280,7 +292,10 @@ class Page {
             accTrigger: "tf-ds-acc-target-a",
             accExternalTrigger: "tf-ds-acc-external-target-a",
             accBody: "tf-ds-acc-body-a",
-            onChange: () => {
+            onHide: () => {
+                //do something
+            },
+            onShow: () => {
                 //do something
             },
         })

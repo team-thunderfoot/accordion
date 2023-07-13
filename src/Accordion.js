@@ -11,7 +11,8 @@ class Accordion {
         this.accTrigger = payload.accTrigger
         this.accExternalTrigger = payload.accExternalTrigger
         this.accBody = payload.accBody
-        this.onChange = payload.onChange
+        this.onHide = payload.onHide
+        this.onShow = payload.onShow
 
         this.JSUTIL = new JSUTIL()
         this.init()
@@ -76,7 +77,8 @@ class Accordion {
             }
         }
 
-        if (this.onChange) this.onChange()
+        if (this.onShow && !isActive) this.onShow()
+        if (this.onHide && isActive) this.onHide()
     }
 
     openAccordion(accordionID) {
@@ -84,7 +86,7 @@ class Accordion {
         const accordion = document.getElementById(accordionID)
         this.JSUTIL.addClass(accordion, this.accActiveClass)
 
-        if (this.onChange) this.onChange()
+        if (this.onShow) this.onShow()
     }
 
     hideAccordion() {
@@ -92,6 +94,8 @@ class Accordion {
         accBodies.forEach((accBody) => {
             this.JSUTIL.removeClass(accBody, this.accActiveClass)
         })
+
+        if (this.onHide) this.onHide()
     }
 
     hideAllAccsExceptActual(accordionID) {
@@ -101,6 +105,8 @@ class Accordion {
                 this.JSUTIL.removeClass(accBody, this.accActiveClass)
             }
         })
+
+        if (this.onHide) this.onHide()
     }
 
     // Clears the click event and removes all added classes

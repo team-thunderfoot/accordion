@@ -19,7 +19,10 @@ class Page {
                 accTrigger: "tf-ds-acc-target-a",
                 accExternalTrigger: "tf-ds-acc-external-target-a",
                 accBody: "tf-ds-acc-body-a",
-                onChange: () => {
+                onHide: () => {
+                    //do something
+                },
+                onShow: () => {
                     //do something
                 },
             })
@@ -36,7 +39,10 @@ class Page {
                 accTrigger: "tf-ds-acc-target-b",
                 accExternalTrigger: "tf-ds-acc-external-target-b",
                 accBody: "tf-ds-acc-body-b",
-                onChange: () => {
+                onHide: () => {
+                    //do something
+                },
+                onShow: () => {
                     //do something
                 },
             })
