@@ -2,7 +2,7 @@
 
 The accordion package provides accordion interface functionality that allows you to interactively show and hide content sections. It makes it easy to create custom accordion elements and offers a seamless user experience.
 
-[Here's an example](https://team-thunderfoot.github.io/accordion/dist/index.html)
+[Here's an example](https://team-thunderfoot.github.io/accordion/)
 
 ## Installation
 
