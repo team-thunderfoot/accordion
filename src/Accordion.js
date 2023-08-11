@@ -59,10 +59,10 @@ class Accordion {
     toggleAcc(accordionID) {
         // Get the accordion element based on its ID
         const accordion = this.element.querySelector(`#${accordionID}`)
-
+        const isActive = ''
         // Check if the accordion exists and make changes to its state
         if (accordion) {
-            const isActive = accordion.classList.contains(this.accActiveClass)
+            isActive = accordion.classList.contains(this.accActiveClass)
 
             if (this.accClose) {
                 isActive
